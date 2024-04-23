@@ -1,0 +1,130 @@
+.sub__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5px 136px;
+  background-color: black;
+  color: white;
+}
+.sub__nav h4 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.sub__nav h4 span {
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  margin-left: 3px;
+}
+.sub__nav .language {
+  display: inherit;
+  -webkit-box-align: inherit;
+      -ms-flex-align: inherit;
+          align-items: inherit;
+  margin-left: 200px;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 23px 150px;
+}
+.navbar .logo h2 {
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 3%;
+  text-align: left;
+}
+.navbar .nav__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 30px;
+}
+.navbar .nav__links li, .navbar .nav__links li a {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.navbar .navigations {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+}
+.navbar .search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 20px;
+  border-radius: 4px;
+  background: rgb(245, 245, 245);
+  font-size: 20px;
+}
+.navbar .search input {
+  border: none;
+  outline: none;
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0%;
+  text-align: left;
+  opacity: 0.5;
+  background-color: transparent;
+}
+.navbar .icons, .navbar .icons a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 23px;
+  gap: 20px;
+}
+.navbar .icons .heartIcon, .navbar .icons a .heartIcon {
+  color: red;
+}
+
+.line {
+  border: 0.5px solid rgb(0, 0, 0);
+  opacity: 0.3;
+}
+
+a.active {
+  text-decoration: underline;
+  color: blue !important;
+}

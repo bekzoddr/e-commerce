@@ -1,0 +1,99 @@
+.sub__nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 136px;
+    background-color: black;
+    color: white;
+    h4{
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: 0%;
+        text-align: center;
+        span{
+            font-weight: 600;
+            line-height: 24px;
+            text-align: center;
+            margin-left: 3px;
+        }
+    }
+    .language{
+        display: inherit;
+        align-items: inherit;
+        margin-left: 200px;
+    }
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 23px 150px;
+    .logo{
+        h2{
+            color: rgb(0, 0, 0);
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 24px;
+            letter-spacing: 3%;
+            text-align: left;
+        }
+    }
+    .nav__links{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        li, li a{
+            color: rgb(0, 0, 0);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 0%;
+            text-align: center;
+        }
+    }
+    .navigations{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+    .search{
+        display: flex;
+        align-items: center;
+        padding: 5px 20px;
+        border-radius: 4px;
+        background: rgb(245, 245, 245);
+        font-size: 20px;
+        input{
+            border: none;
+            outline: none;
+            color: rgb(0, 0, 0);
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 18px;
+            letter-spacing: 0%;
+            text-align: left;
+            opacity: 0.5;
+            background-color: transparent;
+        }
+    }
+    .icons, .icons a{
+        display: flex;
+        align-items: center;
+        font-size: 23px;
+        gap: 20px;
+        .heartIcon{
+            color: red;
+        }
+    }
+
+}
+.line{
+    border: 0.5px solid rgb(0, 0, 0);
+    opacity: 0.3;
+}
+a.active{
+    text-decoration: underline;
+    color: blue !important;
+}
