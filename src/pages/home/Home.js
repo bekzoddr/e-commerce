@@ -14,6 +14,9 @@ const Home = () => {
   }, []);
   return (
     <div>
+      <br />
+      <br />
+      <br />
       <Hero />
       <br />
       <Product data={data} />
