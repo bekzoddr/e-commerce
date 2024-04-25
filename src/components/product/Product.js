@@ -1,22 +1,40 @@
 import React, { memo } from "react";
-import { FaRegHeart, FaRegEye, FaStar } from "react-icons/fa";
-import { useDispatch } from "react-redux";
+import { FaRegHeart, FaRegEye, FaHeart, FaStar } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleToWishes } from "../../context/wishlistSlice";
 import { Link } from "react-router-dom";
-const Product = ({ data }) => {
+import { addToCard } from "../../context/cartSlice";
+const Product = ({ data, title, button, time }) => {
   const dispatch = useDispatch();
-
+  const wishes = useSelector((state) => state.wishlist.value);
+  const cart = useSelector((state) => state.cart.value);
   let products = data?.map((el) => (
     <div key={el.id} className="card">
       <div className="card__img">
         <Link to={`/single/${el.id}`}>
           <img src={el.thumbnail} alt="" />
         </Link>
-        <div className="click">
-          <button onClick={() => dispatch(toggleToWishes(el))}>
-            <FaRegHeart />
+        {cart.some((c) => c.id === el.id) ? (
+          <button className="cart added">Added</button>
+        ) : (
+          <button onClick={() => dispatch(addToCard(el))} className="cart">
+            Add To Cart
           </button>
-          <button>
+        )}
+
+        <div className="click">
+          <button
+            className="likeBtn"
+            onClick={() => dispatch(toggleToWishes(el))}
+          >
+            {" "}
+            {wishes.some((w) => w.id === el.id) ? (
+              <FaHeart className="likes" />
+            ) : (
+              <FaRegHeart className="likes" />
+            )}
+          </button>
+          <button className="eyeBtn">
             <FaRegEye />
           </button>
         </div>
@@ -43,11 +61,11 @@ const Product = ({ data }) => {
       <div className="product__title container">
         <div className="frame">
           <div className="box"></div>
-          <h2>This Month</h2>
+          <h2>{time}</h2>
         </div>
         <div className="title">
-          <h1>Best Selling Products</h1>
-          <button>View All</button>
+          <h1>{title}</h1>
+          <button>{button}</button>
         </div>
       </div>
       <div className="products container">{products}</div>

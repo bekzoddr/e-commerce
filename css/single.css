@@ -26,6 +26,9 @@
   border-radius: 4px;
   background: rgb(245, 245, 245);
 }
+.single .images .first {
+  border: 1px solid black;
+}
 .single .images .thumbnails {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -193,6 +196,49 @@
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 4px;
   font-size: 19px;
+}
+
+.delivery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  padding: 19px 24px;
+}
+.delivery .deliver {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px auto;
+  gap: 15px;
+}
+.delivery .deliver .icon {
+  font-size: 25px;
+}
+.delivery .deliver h3 {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.delivery .deliver h4 {
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0%;
+  text-align: left;
+  text-decoration-line: underline;
 }
 
 .stars {

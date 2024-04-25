@@ -3,23 +3,27 @@ import { useParams } from "react-router-dom";
 import axios from "../../api";
 import mainUrl from "../../api";
 import { FaStar } from "react-icons/fa6";
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 import Product from "../../components/product/Product";
 import { TbTruckDelivery } from "react-icons/tb";
 import { LuRefreshCcw } from "react-icons/lu";
-
+import { useDispatch, useSelector } from "react-redux";
+import { toggleToWishes } from "../../context/wishlistSlice";
 function SingleRoute() {
+  const dispatch = useDispatch();
+  const wishes = useSelector((state) => state.wishlist.value);
   const [product, setProduct] = useState(null);
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
+    setLoading(true);
     axios
-      .get(`${mainUrl}/${id}`)
+      .get(`/products/${id}`)
       .then((res) => setProduct(res.data))
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
-  }, []);
+  }, [id]);
 
   if (loading) {
     return <h1>loading......</h1>;
@@ -29,15 +33,15 @@ function SingleRoute() {
       <div className="single container">
         <div className="images">
           <div className="thumbnails">
-            <img src="" alt="" />
-            <img src="" alt="" />
-            <img src="" alt="" />
-            <img src="" alt="" />
+            <img src={product?.images[0]} alt="" />
+            <img src={product?.images[1]} alt="" />
+            <img src={product?.images[2]} alt="" />
+            <img src={product?.images[3]} alt="" />
           </div>
-          <img src="" alt="" />
+          <img className="first" src={product?.thumbnail} alt="" />
         </div>
         <div className="infos">
-          <h2>Havic HV G-92 Gamepad</h2>
+          <h2>{product?.title}</h2>
           <div className="rating">
             <div className="stars">
               <FaStar />
@@ -50,12 +54,8 @@ function SingleRoute() {
             <hr />
             <h3 className="stock">In Stock</h3>
           </div>
-          <h2 className="price">$192.00</h2>
-          <p className="description">
-            PlayStation 5 Controller Skin High quality vinyl with air <br />{" "}
-            channel adhesive for easy bubble free install & mess <br /> free
-            removal Pressure sensitive.
-          </p>
+          <h2 className="price">${product?.price}</h2>
+          <p className="description">{product?.description}</p>
           <hr />
           <div className="color">
             <h3>Colours:</h3>
@@ -78,7 +78,7 @@ function SingleRoute() {
             </div>
             <button className="buy">Buy</button>
             <button className="like">
-              <FaRegHeart />
+              <FaRegHeart className="likes" />
             </button>
           </div>
           <div className="delivery">

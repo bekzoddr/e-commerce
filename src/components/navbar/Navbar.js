@@ -4,7 +4,10 @@ import { FaRegHeart } from "react-icons/fa6";
 import { BsCart3 } from "react-icons/bs";
 import { GoChevronDown } from "react-icons/go";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Navbar = () => {
+  const wishes = useSelector((state) => state.wishlist.value);
+  const carts = useSelector((state) => state.cart.value);
   return (
     <nav>
       <div className="sub__nav">
@@ -35,10 +38,26 @@ const Navbar = () => {
             <FiSearch />
           </div>
           <div className="icons">
-            <NavLink to="/wishlist">
+            <NavLink className="heart" to="/wishlist">
               <FaRegHeart className="heartIcon" />
+              {wishes.length > 0 ? (
+                <sub>
+                  <p>{wishes.length}</p>
+                </sub>
+              ) : (
+                <></>
+              )}
             </NavLink>
-            <BsCart3 />
+            <NavLink className="cart" to="/cart">
+              <BsCart3 className="cartIcon" />
+              {wishes.length > 0 ? (
+                <sub>
+                  <p>{carts.length}</p>
+                </sub>
+              ) : (
+                <></>
+              )}
+            </NavLink>
           </div>
         </div>
       </div>

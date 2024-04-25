@@ -19,7 +19,12 @@ const Home = () => {
       <br />
       <Hero />
       <br />
-      <Product data={data} />
+      <Product
+        time="This Month"
+        title="Best Selling Products"
+        button="View All"
+        data={data}
+      />
       <br />
       <br />
       <TimerBox />
