@@ -9,6 +9,7 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { LuRefreshCcw } from "react-icons/lu";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleToWishes } from "../../context/wishlistSlice";
+import { decCart, incCart } from "../../context/cartSlice";
 function SingleRoute() {
   const dispatch = useDispatch();
   const wishes = useSelector((state) => state.wishlist.value);

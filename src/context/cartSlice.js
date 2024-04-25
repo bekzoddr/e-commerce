@@ -9,7 +9,7 @@ export const carttSlice = createSlice({
     addToCard(state, action) {
       let index = state.value.findIndex((el) => el.id === action.payload.id);
       if (index < 0) {
-        state.value = [...state.value, { ...action.payload, quantity: 5 }];
+        state.value = [...state.value, { ...action.payload, quantity: 1 }];
       }
       localStorage.setItem("cart", JSON.stringify(state.value));
     },
