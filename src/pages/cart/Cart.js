@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { incCart, decCart, removeFromCard } from "../../context/cartSlice";
 const Cart = () => {
   const cart = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();
-  console.log(cart);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   let items = cart?.map((el) => (
     <>
       <div className="cart__box">
